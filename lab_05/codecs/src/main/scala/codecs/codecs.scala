@@ -57,7 +57,7 @@ trait Encoder[-A] {
     *     stringEncoder.transform[UUID](uuid => uuid.toString)
     * }}}
     *
-    * This operation is also known as “contramap”.
+    * This operation is also known as “contra map”.
     */
   def transform[B](f: B => A): Encoder[B] =
     Encoder.fromFunction[B](value => this.encode(f(value)))
@@ -303,18 +303,18 @@ object Main {
   import Util._
 
   def main(args: Array[String]): Unit = {
-    println(renderJson(42))
+    println(renderJson("Oscar"))
     println(renderJson("foo"))
 
     val maybeJsonString = parseJson(""" "foo" """)
-    val maybeJsonObj    = parseJson(""" { "name": "Alice", "age": 42 } """)
-    val maybeJsonObj2   = parseJson(""" { "name": "Alice", "age": "42" } """)
+    val maybeJsonObj    = parseJson(""" { "name": "Oscar", "surname": "Wilde" } """)
+    val maybeJsonObj2   = parseJson(""" { "name": "Alice", "surname": "Wilde" } """)
     // Uncomment the following lines as you progress in the assignment
-//     println(maybeJsonString.flatMap(_.decodeAs[Int]))
-//     println(maybeJsonString.flatMap(_.decodeAs[String]))
-//     println(maybeJsonObj.flatMap(_.decodeAs[Person]))
-//     println(maybeJsonObj2.flatMap(_.decodeAs[Person]))
-//     println(renderJson(Person("Bob", 66)))
+     println(maybeJsonString.flatMap(_.decodeAs[String]))
+     println(maybeJsonString.flatMap(_.decodeAs[String]))
+     println(maybeJsonObj.flatMap(_.decodeAs[Author]))
+     println(maybeJsonObj2.flatMap(_.decodeAs[Author]))
+     println(renderJson(Author("Bob", "Marley")))
   }
 
 

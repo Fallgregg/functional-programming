@@ -82,6 +82,7 @@ class CodecsSuite
     assert(encoder.encode(person) == json)
   }
 
+
   @Test def `it is possible to encode and decode people (4pts)`(): Unit = {
     checkProperty(Prop.forAll((s: String, x: Int) => encodeAndThenDecodeProp(Person(s, x))))
   }
@@ -101,9 +102,8 @@ class CodecsSuite
   }
 
   // TODO individual
-
   @Test def `a 'Author' value should be encoded as a JSON object (1pt)`(): Unit = {
-    val author = Author("Oscar", "Wild")
+    val author = Author("Oscar", "Wilde")
     val json = Json.Obj(Map("name" -> Json.Str("Oscar"), "surname" -> Json.Str("Wilde")))
     val encoder = implicitly[Encoder[Author]]
     assert(encoder.encode(author) == json)
@@ -112,6 +112,7 @@ class CodecsSuite
   @Test def `it is possible to encode and decode authors (4pts)`(): Unit = {
     checkProperty(Prop.forAll((s: String, x: String) => encodeAndThenDecodeProp(Author(s, x))))
   }
+
 
 }
 
