@@ -1,0 +1,11 @@
+[debug] > Exec(unMain scalashop.VerticalBoxBlurRunner, None, None)
+[error] Expected ID character
+[error] Not a valid command: unMain (similar: plugin)
+[error] Expected project ID
+[error] Expected configuration
+[error] Expected ':'
+[error] Expected key
+[error] Not a valid key: unMain (similar: runMain, bgRunMain, fgRunMain)
+[error] unMain scalashop.VerticalBoxBlurRunner
+[error]       ^
+[debug] > Exec(idea-shell, None, None)

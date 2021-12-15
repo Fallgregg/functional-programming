@@ -1,0 +1,11 @@
+[debug] > Exec(runMain scalashop.VerticalBoxBlurRunner, None, None)
+[debug] Evaluating tasks: Compile / runMain
+[debug] Running task... Cancel: Signal, check cycles: false, forcegc: true
+[info] compiling 6 Scala sources to D:\uni\5smstr\KPI\scalashop\target\scala-2.13\classes ...
+[info] Non-compiled module 'compiler-bridge_2.13' for Scala 2.13.0. Compiling...
+[info]   Compilation completed in 17.107s.
+[info] done compiling
+[error] Nonzero exit code: 1
+[error] (Compile / runMain) Nonzero exit code: 1
+[error] Total time: 30 s, completed Dec 14, 2021, 10:31:45 PM
+[debug] > Exec(idea-shell, None, None)

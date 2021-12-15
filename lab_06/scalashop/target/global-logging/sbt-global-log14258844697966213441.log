@@ -1,0 +1,9 @@
+[debug] > Exec(runMain scalashop.HorizontalBoxBlurRunner, None, None)
+[debug] Evaluating tasks: Compile / runMain
+[debug] Running task... Cancel: Signal, check cycles: false, forcegc: true
+[info] compiling 6 Scala sources to D:\uni\5smstr\KPI\scalashop\target\scala-2.13\classes ...
+[info] done compiling
+[error] Nonzero exit code: 1
+[error] (Compile / runMain) Nonzero exit code: 1
+[error] Total time: 14 s, completed Dec 14, 2021, 10:46:12 PM
+[debug] > Exec(idea-shell, None, None)

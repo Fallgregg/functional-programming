@@ -1,0 +1,5 @@
+[debug] > Exec(runMain scalashop.VerticalBoxBlurRunner, None, None)
+[debug] Evaluating tasks: Compile / runMain
+[debug] Running task... Cancel: Signal, check cycles: false, forcegc: true
+[success] Total time: 12 s, completed Dec 14, 2021, 11:16:17 PM
+[debug] > Exec(idea-shell, None, None)
