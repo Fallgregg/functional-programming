@@ -1,20 +1,23 @@
 package scalashop
 
+import scalashop.HorizontalBoxBlurRunner.standardConfig
+
 import scala.math.pow
 
-object IndividualTask extends App{
+object Individual extends App{
 
   def toList(range: Seq[Int], n: Int): List[Double] =
-    range.map(x => (x, n)).collect(individualTask).toList
+    range.map(x => (x, n)).collect(individual).toList
 
-  def individualTask: PartialFunction[(Int, Int), Double] = {
+  def individual: PartialFunction[(Int, Int), Double] = {
     case (x, n) if x < n => pow(x, n)
     case (x, n) if x > n => n
   }
 
-  def get_result(range: Seq[Int], n: Int, numTasks: Int): List[Double] = {
+  def getResult(range: Seq[Int], n: Int, numTasks: Int): List[Double] = {
     val elemsPerTask: Int = range.length / numTasks max 1
-    val startPoints = 0 to range.length by elemsPerTask
+    val startPoints = range.indices by elemsPerTask
+
 
     val tasks = startPoints.map(t => {
       task {
@@ -29,10 +32,18 @@ object IndividualTask extends App{
     result
   }
 
-  val n = 3
-  val y = toList(-250 to 250, n)
-  println(y + "\n")
+  val n = 1
+  val result = toList(-250 until 250, n)
+//  println(result + "\n")
 
-  val result = get_result(-250 to 250, n, 3)
-  println(result)
+  val parResult = getResult(-250 until 250, n, 3)
+//  println(parResult)
+
+  val seqtime = standardConfig measure {
+    Individual.result
+  }
+  val partime = standardConfig measure {
+    Individual.parResult
+  }
+  println(s"speedup: ${seqtime.value / partime.value}")
 }
